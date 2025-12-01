@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ransomware Analysis — CyberSafe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcomePopup" class="popup">
+  <div class="popup-content">
+    <h1>⚡ Welcome to CyberSafe ⚡</h1>
+    <p>Immediate Ransomware Analysis & Decryption</p>
+    <button class="btn" onclick="closePopup()">Get Started</button>
+  </div>
+</div>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="badge">CYBERSAFE · 24/7</div>
+      <h1>RANSOMWARE ATTACK?<br>Immediate expert analysis & decryption starts here</h1>
+      <p class="lead">Upload the encrypted file and our decryptor will attempt recovery using the configured keys. Fast — local — safe.</p>
+
+      <div class="cta-row">
+        <button class="btn" onclick="goToDecrypt()">START ANALYSIS</button>
+        <button class="ghost" onclick="openDocs()">API DOCS</button>
+      </div>
+
+      <div style="margin-top:18px">
+        <span class="small-card"><strong style="color:var(--neon)">24/7</strong><div style="font-size:12px">Availability</div></span>
+        <span class="small-card"><strong style="color:var(--neon)">90%</strong><div style="font-size:12px">Success (demo)</div></span>
+        <span class="small-card"><strong style="color:var(--neon)">LOCAL</strong><div style="font-size:12px">Safe decrypt</div></span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="ransomware.jpeg" alt="hero" />
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div class="panel">
+      <h3 style="color:var(--neon)">Upload & Decrypt</h3>
+
+      <label for="fileInput">Step 1 — Upload encrypted file</label>
+      <input id="fileInput" type="file" class="input" />
+
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button class="btn" onclick="uploadFile()">Upload</button>
+        <button class="btn" onclick="autoFillLatest()">Use last file</button>
+      </div>
+
+      <div style="margin-top:16px">
+        <label>Step 2 — Decrypt</label>
+        <input id="decryptFilename" class="input" placeholder="filename from upload" readonly />
+        <div class="actions">
+          <button class="btn" onclick="decryptFile()">Decrypt</button>
+          <a id="downloadLink" class="download-btn" style="display:none" href="#" download>Download</a>
+        </div>
+        <div id="status" class="status"></div>
+      </div>
+
+      <div class="services" style="margin-top:18px">
+        <div class="service"><strong>AES Decryption</strong><div style="font-size:12px;margin-top:8px;color:var(--muted)">PyCryptodome</div></div>
+        <div class="service"><strong>Local Processing</strong><div style="font-size:12px;margin-top:8px;color:var(--muted)">No cloud upload</div></div>
+        <div class="service"><strong>File Recovery</strong><div style="font-size:12px;margin-top:8px;color:var(--muted)">Decrypted files saved</div></div>
+      </div>
+
+      <div id="warningBox" class="warning" style="display:none">
+        <h4>⚠ Suspicious file detected</h4>
+        <div id="warningText">Upload only encrypted file. Don’t upload personal or sensitive data.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3 style="color:var(--neon)">Ransomware Warning & Prevention</h3>
+
+      <p style="color:var(--muted)">Quick tips to avoid infection and steps if infected.</p>
+
+      <div style="margin-top:12px">
+        <h4 style="color:var(--neon)">Prevention</h4>
+        <ul style="color:var(--muted);line-height:1.6">
+          <li>Keep OS & apps updated</li>
+          <li>Do not open unknown attachments</li>
+          <li>Use strong passwords & 2FA</li>
+          <li>Back up important files offline</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:12px">
+        <h4 style="color:var(--neon)">If infected</h4>
+        <ol style="color:var(--muted);line-height:1.6">
+          <li>Disconnect network</li>
+          <li>Do not pay ransom</li>
+          <li>Use this tool or contact cyber experts</li>
+        </ol>
+      </div>
+
+      <div style="margin-top:18px">
+        <button class="btn" onclick="showWarning()">Show Warning</button>
+        <button class="btn" onclick="hideWarning()">Hide</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
